@@ -1,45 +1,58 @@
-This is a React + TypeScript project powered by [Vite](https://vite.dev/) and managed with Yarn.
+# 50 Juta Perbulan Guide
 
-## Getting Started
+Panduan ringkas berbasis web untuk membantu pemain mempelajari aturan permainan kartu **50 Juta Perbulan** dengan lebih praktis.
 
-Install dependencies:
+![50 Juta Perbulan - The Card Game](./public/50jt-box.jpg)
+
+## Tentang Aplikasi
+
+Panduan ini dibuat secara independen untuk mempermudah pemain dalam mempelajari dan memahami aturan permainan **50 Juta Perbulan** agar lebih mudah digunakan saat bermain.
+
+### Disclaimer
+
+Aplikasi panduan ini merupakan **versi ringkas (unofficial)** yang diadaptasi dari panduan resmi yang dirilis oleh publisher **TokoBoardGame.com**.
+
+## Teknologi
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+
+## Menjalankan Proyek
+
+Instal dependensi:
 
 ```bash
 yarn
 ```
 
-Run the development server:
+Jalankan mode development:
 
 ```bash
-yarn dev
+yarn dev --host 0.0.0.0
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Aplikasi akan tersedia di:
 
-Build for production:
+```text
+http://localhost:5173
+```
+
+Build production:
 
 ```bash
 yarn build
 ```
 
-Preview production build:
+Preview hasil build:
 
 ```bash
 yarn preview
 ```
 
-## Learn More
+## Masukan dan Koreksi
 
-To learn more about the stack used in this project:
+Jika ada kesalahan penulisan aturan, ketidaktepatan efek kartu, atau masukan lain terkait panduan ini, silakan kirim ke:
 
-- [Vite Documentation](https://vite.dev/guide/) - project setup and configuration.
-- [React Documentation](https://react.dev/) - core React concepts.
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - utility classes and theming.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Email: [by.ciikel@gmail.com](mailto:by.ciikel@gmail.com)
