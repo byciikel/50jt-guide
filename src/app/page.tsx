@@ -44,8 +44,8 @@ export default function Page() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100 p-0 font-sans transition-colors duration-300 dark:bg-black md:p-4">
-      <div className="relative flex h-[100dvh] w-full max-w-md flex-col overflow-hidden border-x border-gray-200 bg-gray-50 shadow-2xl dark:border-gray-800 dark:bg-gray-900 md:h-[90vh] md:rounded-3xl md:border-y">
+    <div className="flex min-h-dvh bg-gray-100 p-0 font-sans transition-colors duration-300 dark:bg-black md:items-center md:justify-center md:p-4">
+      <div className="relative flex min-h-dvh w-full max-w-md flex-col overflow-hidden border-x border-gray-200 bg-gray-50 shadow-2xl dark:border-gray-800 dark:bg-gray-900 md:h-[90vh] md:min-h-0 md:rounded-3xl md:border-y">
         <header className="sticky top-0 z-50 flex items-center justify-between border-b border-gray-200 bg-white/90 p-4 backdrop-blur-md dark:border-gray-800 dark:bg-gray-900/90">
           <div className="flex items-center gap-3">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-gray-200 bg-red-100 shadow-md dark:border-gray-700 dark:bg-red-900/40">
