@@ -43,6 +43,10 @@ export function CardsTab() {
         ))}
       </div>
 
+      <div className="px-4 py-5 text-center text-xs text-gray-500 dark:text-gray-600">
+        Menampilkan {filteredCards.length} dari {CARD_DATA.length} kartu glossary
+      </div>
+
       <CardModal card={selectedCard} onClose={() => setSelectedCard(null)} />
     </div>
   );

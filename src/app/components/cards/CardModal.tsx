@@ -57,16 +57,16 @@ export function CardModal({ card, onClose }: CardModalProps) {
         </button>
 
         <div
-          className={`relative w-full overflow-hidden bg-gradient-to-br px-6 pt-6 pb-2 ${card.bg}`}
+          className={`relative w-full overflow-hidden bg-gradient-to-br px-6 pt-6 pb-4 ${card.bg}`}
           style={{ minHeight: "30vh" }}
         >
-          <div className="relative flex min-h-[180px] h-full w-full flex-col items-center justify-center overflow-hidden rounded-2xl border-4 border-white/30 bg-black/10 shadow-2xl">
-            <div className="relative z-10 flex h-24 w-24 items-center justify-center rounded-full border border-white/40 bg-white/20 shadow-[0_10px_40px_rgb(0,0,0,0.4)] backdrop-blur-md">
+          <div className="relative flex min-h-[220px] h-full w-full flex-col items-center justify-center overflow-hidden rounded-2xl border-4 border-white/30 bg-black/10 shadow-2xl">
+            <span className="pointer-events-none absolute top-4 px-3 text-center text-3xl font-black uppercase tracking-widest text-white/20 transform -skew-y-6">
+              {card.name}
+            </span>
+            <div className="relative z-10 mt-10 flex h-24 w-24 items-center justify-center rounded-full border border-white/40 bg-white/20 shadow-[0_10px_40px_rgb(0,0,0,0.4)] backdrop-blur-md">
               <span className="text-6xl drop-shadow-[0_5px_10px_rgba(0,0,0,0.5)]">{card.icon}</span>
             </div>
-            <span className="pointer-events-none absolute bottom-4 px-2 text-center text-3xl font-black uppercase tracking-widest text-white/20 transform -skew-y-6">
-              {card.name.split(" ")[1] || card.name.split(" ")[0]}
-            </span>
           </div>
         </div>
 

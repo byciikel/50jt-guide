@@ -26,12 +26,12 @@ export function CardItem({ card, onClick }: CardItemProps) {
         className={`absolute inset-0 bg-gradient-to-br ${card.bg} p-2 transition-transform duration-500 group-hover:scale-105`}
       >
         <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-xl border-[3px] border-white/20 bg-black/10">
-          <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border border-white/40 bg-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.3)] backdrop-blur-md transition-transform duration-500 group-hover:scale-110 sm:h-20 sm:w-20">
-            <span className="text-4xl drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)] sm:text-5xl">{card.icon}</span>
-          </div>
-          <span className="pointer-events-none absolute bottom-4 px-2 text-center text-xl font-black uppercase tracking-widest text-white/30 transform -skew-y-6 sm:text-2xl">
+          <span className="pointer-events-none absolute top-3 px-2 text-center text-xl font-black uppercase tracking-widest text-white/20 transform -skew-y-6 sm:text-2xl">
             {card.name.split(" ")[1] || card.name.split(" ")[0]}
           </span>
+          <div className="relative z-10 mt-8 flex h-16 w-16 items-center justify-center rounded-full border border-white/40 bg-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.3)] backdrop-blur-md transition-transform duration-500 group-hover:scale-110 sm:h-20 sm:w-20">
+            <span className="text-4xl drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)] sm:text-5xl">{card.icon}</span>
+          </div>
         </div>
       </div>
       {/* Gradient bawah — selalu tampil untuk nama */}
@@ -46,7 +46,7 @@ export function CardItem({ card, onClick }: CardItemProps) {
       </div>
 
       {/* Overlay deskripsi — muncul saat hover */}
-      <div className="absolute inset-0 flex flex-col justify-end bg-black/75 p-3 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+      <div className="absolute inset-0 flex scale-95 flex-col justify-end rounded-xl bg-black/75 p-3 text-white opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:scale-100 group-hover:rounded-2xl group-hover:opacity-100">
         <span className={`mb-1.5 inline-block self-start rounded px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider shadow-sm ${badgeBg}`}>
           {card.type === "special" ? "Karakter" : card.type}
         </span>
