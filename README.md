@@ -2,6 +2,8 @@
 
 Panduan ringkas berbasis web untuk membantu pemain mempelajari aturan permainan kartu **50 Juta Perbulan** dengan lebih praktis.
 
+**Live App:** https://intip.in/50jtguide
+
 ![50 Juta Perbulan - The Card Game](./public/50jt-box.jpg)
 
 ## Tentang Aplikasi
