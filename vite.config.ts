@@ -18,6 +18,7 @@ const devAccessLogger = () => ({
 });
 
 export default defineConfig({
+  base: "/50jt-guide/",
   plugins: [react(), tailwindcss(), devAccessLogger()],
   resolve: {
     alias: {
