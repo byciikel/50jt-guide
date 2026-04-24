@@ -34,17 +34,24 @@ export function CardItem({ card, onClick }: CardItemProps) {
           </span>
         </div>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-90" />
-      <div className="absolute inset-0 flex flex-col justify-end overflow-hidden p-4 text-white">
-        <div className="flex translate-y-8 flex-col transition-transform duration-300 ease-in-out group-hover:translate-y-0 sm:translate-y-10">
-          <span className={`mb-1.5 self-start rounded px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider shadow-sm ${badgeBg}`}>
-            {card.type === "special" ? "Karakter" : card.type}
-          </span>
-          <h3 className="text-sm font-bold leading-tight drop-shadow-md sm:text-base">{card.name}</h3>
-          <div className="mt-1 h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out group-hover:h-auto group-hover:opacity-100">
-            <p className="line-clamp-4 pt-1 text-[9px] leading-snug text-gray-200 sm:text-[10px]">{card.desc}</p>
-          </div>
-        </div>
+      {/* Gradient bawah — selalu tampil untuk nama */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+
+      {/* Nama kartu — selalu tampil */}
+      <div className="absolute bottom-0 left-0 right-0 p-3 text-white">
+        <span className={`mb-1 inline-block rounded px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider shadow-sm ${badgeBg}`}>
+          {card.type === "special" ? "Karakter" : card.type}
+        </span>
+        <h3 className="text-xs font-bold leading-tight drop-shadow-md sm:text-sm">{card.name}</h3>
+      </div>
+
+      {/* Overlay deskripsi — muncul saat hover */}
+      <div className="absolute inset-0 flex flex-col justify-end bg-black/75 p-3 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+        <span className={`mb-1.5 inline-block self-start rounded px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider shadow-sm ${badgeBg}`}>
+          {card.type === "special" ? "Karakter" : card.type}
+        </span>
+        <h3 className="mb-1.5 text-xs font-bold leading-tight sm:text-sm">{card.name}</h3>
+        <p className="line-clamp-5 text-[9px] leading-snug text-gray-200 sm:text-[10px]">{card.desc}</p>
       </div>
     </div>
   );
