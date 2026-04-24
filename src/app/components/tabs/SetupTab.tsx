@@ -1,4 +1,5 @@
 import { AlertCircle } from "lucide-react";
+import React from "react";
 
 function StepItem({
   step,
@@ -7,7 +8,7 @@ function StepItem({
 }: {
   step: string;
   title: string;
-  desc: string;
+  desc: React.ReactNode;
 }) {
   return (
     <div className="relative">
@@ -30,8 +31,9 @@ export function SetupTab() {
         <div>
           <h3 className="text-sm font-bold text-amber-800 dark:text-amber-400">Tujuan Permainan</h3>
           <p className="mt-1 text-xs leading-relaxed text-amber-700 dark:text-amber-500">
-            Jadilah pemain terakhir yang bertahan hidup! Hindari kartu KPK dan UU
-            Perampasan Aset dengan segala cara.
+            Jadilah <strong className="text-amber-900 dark:text-amber-300">pemain terakhir yang bertahan hidup!</strong> Hindari kartu{" "}
+            <strong className="text-red-600 dark:text-red-400">KPK</strong> dan{" "}
+            <strong className="text-red-600 dark:text-red-400">UU Perampasan Aset</strong> dengan segala cara.
           </p>
         </div>
       </div>
@@ -40,17 +42,17 @@ export function SetupTab() {
         <StepItem
           step="1"
           title="Pisahkan Kartu Khusus"
-          desc="Keluarkan kartu AMNESTI, KPK, UU Perampasan Aset, dan Karakter dari deck utama."
+          desc={<>Keluarkan kartu <strong className="text-red-600 dark:text-red-400">AMNESTI</strong>, <strong className="text-red-600 dark:text-red-400">KPK</strong>, <strong className="text-red-600 dark:text-red-400">UU Perampasan Aset</strong>, dan <strong className="text-red-600 dark:text-red-400">Karakter</strong> dari deck utama.</>}
         />
         <StepItem
           step="2"
           title="Bagikan Modal"
-          desc="Bagikan 5 kartu acak ke setiap pemain, ditambah 1 kartu AMNESTI sebagai nyawa cadangan."
+          desc={<>Bagikan <strong className="text-gray-800 dark:text-gray-200">5 kartu acak</strong> ke setiap pemain, ditambah <strong className="text-gray-800 dark:text-gray-200">1 kartu</strong> <strong className="text-red-600 dark:text-red-400">AMNESTI</strong> sebagai nyawa cadangan.</>}
         />
         <StepItem
           step="3"
           title="Masukkan Jebakan"
-          desc="Masukkan kartu KPK (Jumlah pemain - 1) & UU Perampasan Aset ke Deck. Kocok ulang!"
+          desc={<>Masukkan kartu <strong className="text-red-600 dark:text-red-400">KPK</strong> <strong className="text-gray-800 dark:text-gray-200">(Jumlah pemain - 1)</strong> &amp; <strong className="text-red-600 dark:text-red-400">UU Perampasan Aset</strong> ke Deck. Kocok ulang!</>}
         />
       </div>
     </div>

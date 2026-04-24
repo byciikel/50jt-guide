@@ -1,6 +1,23 @@
 import { X } from "lucide-react";
 
+import { CARD_DATA } from "../../data/cards";
 import type { CardData } from "../../types";
+
+// Sort by length descending so longer names match before shorter ones (e.g. "UU PERAMPASAN ASET" before "KPK")
+const CARD_NAMES = CARD_DATA.map((c) => c.name).sort((a, b) => b.length - a.length);
+
+function highlightRefs(text: string): React.ReactNode {
+  const escaped = CARD_NAMES.map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const pattern = new RegExp(`(${escaped.join("|")})`, "gi");
+  const parts = text.split(pattern);
+  return parts.map((part, i) =>
+    CARD_NAMES.some((name) => name.toLowerCase() === part.toLowerCase()) ? (
+      <span key={i} className="font-semibold text-red-600 dark:text-red-400">{part}</span>
+    ) : (
+      part
+    )
+  );
+}
 
 interface CardModalProps {
   card: CardData | null;
@@ -62,7 +79,7 @@ export function CardModal({ card, onClose }: CardModalProps) {
           <h3 className="mb-2 text-2xl font-bold leading-tight text-gray-900 dark:text-white">{card.name}</h3>
           <div className="mb-4 h-1 w-10 rounded-full bg-red-500" />
           <p className="whitespace-pre-wrap text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-            {card.desc}
+            {highlightRefs(card.desc)}
           </p>
           {card.note && (
             <div className="mt-5 rounded-xl border border-red-200 bg-red-50 p-4 dark:border-red-900/30 dark:bg-red-900/10">
@@ -70,7 +87,7 @@ export function CardModal({ card, onClose }: CardModalProps) {
                 📌 Note Khusus:
               </strong>
               <p className="whitespace-pre-wrap text-xs leading-relaxed text-red-800 dark:text-red-300">
-                {card.note}
+                {card.note ? highlightRefs(card.note) : null}
               </p>
             </div>
           )}

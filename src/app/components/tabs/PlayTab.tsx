@@ -15,7 +15,10 @@ export function PlayTab({ onOpenGlossary }: PlayTabProps) {
             🃏
           </div>
           <div>
-            <h3 className="text-sm font-bold text-gray-900 dark:text-white">1. Mainkan Kartu (Opsional)</h3>
+            <h3 className="text-sm font-bold text-gray-900 dark:text-white">
+              1. Mainkan Kartu{" "}
+              <span className="ml-1 rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-bold text-green-700 dark:bg-green-900/30 dark:text-green-400">Opsional</span>
+            </h3>
             <p className="text-xs leading-relaxed text-gray-500">
               Boleh main kartu aksi sebanyak yang diinginkan.
             </p>
@@ -26,9 +29,12 @@ export function PlayTab({ onOpenGlossary }: PlayTabProps) {
             📥
           </div>
           <div>
-            <h3 className="text-sm font-bold text-gray-900 dark:text-white">2. Ambil Kartu (Wajib)</h3>
+            <h3 className="text-sm font-bold text-gray-900 dark:text-white">
+              2. Ambil Kartu{" "}
+              <span className="ml-1 rounded-full bg-red-100 px-2 py-0.5 text-[10px] font-bold text-red-700 dark:bg-red-900/30 dark:text-red-400">Wajib</span>
+            </h3>
             <p className="text-xs leading-relaxed text-gray-500">
-              Wajib ambil 1 kartu dari deck untuk mengakhiri giliran.
+              Wajib ambil <strong className="text-gray-700 dark:text-gray-300">1 kartu</strong> dari deck untuk mengakhiri giliran.
             </p>
           </div>
         </div>
@@ -36,8 +42,8 @@ export function PlayTab({ onOpenGlossary }: PlayTabProps) {
       <div className="rounded-3xl bg-red-600 p-6 text-white shadow-xl dark:bg-red-900/80">
         <h3 className="mb-2 text-lg font-bold">Pemain Gugur?</h3>
         <p className="mb-4 text-sm leading-relaxed text-red-50">
-          Jika kamu mengambil kartu KPK dan tidak punya kartu penyelamat, kamu langsung
-          tereliminasi!
+          Jika kamu mengambil kartu <strong className="font-bold text-white">KPK</strong> dan tidak punya{" "}
+          <strong className="font-bold text-yellow-300">kartu penyelamat</strong>, kamu langsung tereliminasi!
         </p>
         <button
           onClick={onOpenGlossary}
